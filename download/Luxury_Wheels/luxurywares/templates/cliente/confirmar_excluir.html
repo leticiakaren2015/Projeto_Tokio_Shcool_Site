@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Confirmar exclusão</h2>
+  <p>Deseja excluir a reserva de {{ reserva.cliente.nome }} ({{ reserva.veiculo.modelo }})?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Sim, excluir</button>
+    <a href="{% url 'listar_reserva' %}">Cancelar</a>
+  </form>
+{% endblock %}
